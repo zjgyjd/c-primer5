@@ -158,25 +158,25 @@
 //	}
 //}
 
-////创建复数的类
-//#include <iostream>
-//using namespace std;
-//#include"eleven.h"
-//int main(){
-//	Complex a(3, 4);
-//	Complex c;
-//	cout << "Enter a complex number:(q to quit)\n";
-//	while (cin >> c){
-//		cout << "c is " << c << endl;
-//		cout << "complex conjugate is " << ~c << endl;
-//		cout << "a is " << a << endl;
-//		cout << "a + c is " << a + c << endl;
-//		cout << "a - c is " << a - c << endl;
-//		cout << "a * c is " << a * c << endl;
-//		cout << "2 * c is " << 2 * c << endl;
-//		cout << "Enter a complex number:(q to quit)\n";
-//	}
-//	cout << "Done!!!\n";
-//	system("pause");
-//	return 0;
-//}
+//创建复数的类
+#include <iostream>
+using namespace std;
+#include"eleven.h"
+int main(){
+	Complex a(3, 4);
+	Complex c;
+	cout << "Enter a complex number:(q to quit)\n";
+	while (cin >> c){
+		cout << "c is " << c << endl;
+		cout << "complex conjugate is " << ~c << endl;
+		cout << "a is " << a << endl;
+		cout << "a + c is " << a + c + c<< endl;
+		cout << "a - c is " << a - c << endl;
+		cout << "a * c is " << a * c << endl;
+		cout << "2 * c is " << 2 * c << endl;
+		cout << "Enter a complex number:(q to quit)\n";
+	}
+	cout << "Done!!!\n";
+	system("pause");
+	return 0;
+}

@@ -90,26 +90,26 @@
 //
 //#endif
 
-////创建复数的类
-//#ifndef ELEVEN_H_
-//#define ELEVEN_H_
-//#include <iostream>
-//class Complex{
-//private:
-//	int real;
-//	int imaginary;
-//public:
-//	Complex();
-//	Complex(int r , int i = 0);
-//	Complex(int r);
-//	Complex operator+(const Complex & a)const;
-//	Complex operator-(const Complex & a)const;
-//	Complex operator*(const Complex & a)const;
-//	Complex operator*(int a)const;
-//	Complex operator~()const;
-//	friend Complex operator*(int n, const Complex & a);
-//	friend std::ostream & operator<<(std::ostream & os, const Complex & d);
-//	friend std::istream & operator>>(std::istream & is,  Complex & d);
-//};
-//
-//#endif
+//创建复数的类
+#ifndef ELEVEN_H_
+#define ELEVEN_H_
+#include <iostream>
+class Complex{
+private:
+	int real;
+	int imaginary;
+public:
+	Complex();
+	Complex(int r , int i = 0);
+	Complex(int r);
+	Complex operator+(const Complex & a)const;
+	Complex operator-(const Complex & a)const;
+	Complex operator*(const Complex & a)const;
+	Complex operator*(int a)const;
+	Complex operator~()const;
+	friend Complex operator*(int n, const Complex & a);
+	friend std::ostream & operator<<(std::ostream & os, const Complex & d);
+	friend std::istream & operator>>(std::istream & is,  Complex & d);
+};
+
+#endif

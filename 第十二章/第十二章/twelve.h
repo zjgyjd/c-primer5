@@ -1,0 +1,92 @@
+////StringBad类
+//#include <iostream>
+//#ifndef TWELVE_H_
+//#define TWELVE_H_
+//class StringBad{
+//private:
+//	char * str;//类声明没有为字符串本身设置空间
+//	int len;
+//	static int num_strings;//static表示无论多少个对象都只有一个静态变量，可以用来记录创建对象的数目
+//public:
+//	StringBad(const char* s);//在构造函数中设置new
+//	StringBad();
+//	~StringBad();
+//	StringBad(const StringBad & s);//改为显示复制构造函数
+//	StringBad & operator =(const StringBad & s);//改为显示赋值构造函数
+//	friend std::ostream & operator<<(std::ostream & os, const StringBad & st);
+//};
+//
+//#endif
+
+////修改后的string类
+//#include <iostream>
+//using std::ostream;
+//using std::istream;
+//#ifndef TWELVE_H_
+//#define TWELVE_H_
+//class String{
+//private:
+//	char* str;
+//	int len;
+//	static int num_strings;
+//	static const int CINLIM = 80;
+//public:
+//	String(const char* s);
+//	String();
+//	String(const String &);//复制构造函数
+//	~String();
+//	int lenght()const{ return len; }
+//	String & operator=(const String &);
+//	String & operator=(const char*);
+//	char & operator[](int i);
+//	const char & operator [](int i)const;
+//	friend bool operator <(const String &st, const String &st2);
+//	friend bool operator >(const String &st1, const String &st2);
+//	friend bool operator==(const String &st, const String &st2);
+//	friend ostream & operator<<(ostream & os, const String & st);
+//	friend istream & operator>>(istream & is, String & st);
+//	static int HowMany();	
+//};
+//
+//#endif
+
+////超市队列模拟
+////1.第一个类链表队列
+////2.第二个类顾客队列
+//class Customer{
+//private:
+//	long arrive;//到达时间即何时进入队列
+//	int processing;//交易时间
+//public:
+//	Customer(){ arrive = processing = 0; }
+//	void set(long when);
+//	long when()const{ return arrive; }
+//	int ptime()const{ return processing; }
+//};
+//
+//typedef Customer Item;
+//class Queue{
+//	enum{ Q_SIZE = 10 };
+//private:
+//	Queue(const Queue & q):qsize(0){}//因为现在不使用定义为私有
+//	Queue & operator=(const Queue & q){ return *this; }//确保误用导致程序崩溃
+//	struct Node
+//	{
+//		Item item;
+//		struct Node * next;
+//	};
+//	Node * front;//头指针
+//	Node * rear;//尾指针
+//	int items;//当前项目数
+//	const int qsize;//可存储最大项目数
+//public:
+//	Queue(int qs = Q_SIZE);
+//	~Queue();
+//	bool isempty()const;
+//	bool isfull()const;
+//	int queuecount()const;//总计
+//	bool enqueue(const Item & item);//进
+//	bool dequeue(Item & item);//出
+//
+//};
+

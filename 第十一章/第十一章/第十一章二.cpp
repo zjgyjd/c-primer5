@@ -224,60 +224,60 @@
 //	return pounds;//虽然括号为空但依然有返回值
 //}
 
-////创建复数的类
-//#include <iostream>
-//using namespace std;
-//#include "eleven.h"
-//Complex::Complex(){
-//	real = 0;
-//	imaginary = 0;
-//}
-//Complex::Complex(int r){
-//	real = r;
-//	imaginary = 0;
-//}
-//
-//Complex::Complex(int r, int i){
-//	real = r;
-//	imaginary = i;
-//}
-//
-//Complex Complex::operator*(const Complex & a)const{
-//	Complex temp;
-//	temp.real = real*a.real - imaginary*a.imaginary;
-//	temp.imaginary = real*a.imaginary+imaginary*a.real;
-//	return temp;
-//}
-//
-//Complex Complex::operator*(int n)const{
-//	return Complex(real*n, imaginary*n);
-//}
-//Complex operator*(int n,const Complex & a){
-//	return a * n;
-//}
-//
-//Complex Complex::operator+(const Complex & a)const{
-//	return Complex(real + a.real, imaginary + a.imaginary);
-//}
-//
-//Complex Complex::operator-(const Complex & a)const{
-//	return Complex(real - a.real, imaginary - a.imaginary);
-//}
-//
-//Complex Complex::operator~()const{
-//	return Complex(real, -imaginary);
-//}
-//
-//std::ostream & operator<<(std::ostream & os, const Complex & d){
-//	os << "(" << d.real << "," << d.imaginary << "i)\n";
-//	return os;
-//}
-//
-//std::istream & operator>>(std::istream & is,  Complex & d){//不能用const
-//	std::cout << "real:";
-//	if (is >> d.real){
-//		std::cout << "imaginary:";
-//		is >> d.imaginary;
-//	}
-//	return is;
-//}
+//创建复数的类
+#include <iostream>
+using namespace std;
+#include "eleven.h"
+Complex::Complex(){
+	real = 0;
+	imaginary = 0;
+}
+Complex::Complex(int r){
+	real = r;
+	imaginary = 0;
+}
+
+Complex::Complex(int r, int i){
+	real = r;
+	imaginary = i;
+}
+
+Complex Complex::operator*(const Complex & a)const{
+	Complex temp;
+	temp.real = real*a.real - imaginary*a.imaginary;
+	temp.imaginary = real*a.imaginary+imaginary*a.real;
+	return temp;
+}
+
+Complex Complex::operator*(int n)const{
+	return Complex(real*n, imaginary*n);
+}
+Complex operator*(int n,const Complex & a){
+	return a * n;
+}
+
+Complex Complex::operator+(const Complex & a)const{
+	return Complex(real + a.real, imaginary + a.imaginary);
+}
+
+Complex Complex::operator-(const Complex & a)const{
+	return Complex(real - a.real, imaginary - a.imaginary);
+}
+
+Complex Complex::operator~()const{
+	return Complex(real, -imaginary);
+}
+
+std::ostream & operator<<(std::ostream & os, const Complex & d){
+	os << "(" << d.real << "," << d.imaginary << "i)\n";
+	return os;
+}
+
+std::istream & operator>>(std::istream & is,  Complex & d){//不能用const
+	std::cout << "real:";
+	if (is >> d.real){
+		std::cout << "imaginary:";
+		is >> d.imaginary;
+	}
+	return is;
+}
