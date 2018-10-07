@@ -90,3 +90,54 @@
 //
 //};
 
+////String类的改进函数
+//#ifndef TWELVE_H_
+//#define TWELVE_H_
+//#include <iostream>
+//class String{
+//private:
+//	char* str;
+//	int len;
+//public:
+//	String();
+//	String(const char* s);
+//	~String();
+//	String(const String & a);//显示复制
+//	void stringup();
+//	void stringlow();
+//	int has(char a);
+//	String & operator =(const String & a);//显示赋值
+//	//String operator-(const String & a);
+//	String & String::operator=(const char* s);
+//	//String operator+(const String & a);
+//	//String operator+(const char* a);
+//	bool operator==(const String& a);
+//	friend String operator+(const String & a,const String & b);
+//	//friend String operator+(const char* a, String & s);
+//	friend std::ostream & operator<<(std::ostream & os, const String & a);
+//	friend std::istream& operator>>(std::istream & is,  String & a);
+//};
+//
+//#endif
+
+////使用动态存储的堆
+//#ifndef TWELVE_H_
+//#define TWELVE_H_
+//typedef unsigned long Item;
+//class Stack{
+//private:
+//	enum{ MAX = 0 };
+//	Item * pitems;//维持
+//	int size;
+//	int top;
+//public:
+//	Stack(int n = 10);
+//	Stack(const Stack & st);
+//	~Stack();
+//	bool isempty()const;
+//	bool isfull()const;
+//	bool push(const Item & item);
+//	bool pop(Item & item);
+//	Stack & operator =(const Stack & st);
+//};
+//#endif

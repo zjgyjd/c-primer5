@@ -275,3 +275,87 @@
 //bool newcustomer(double x){
 //	return (std::rand()*x / RAND_MAX < 1);//每六分钟来一个客户，但可能没有
 //}
+
+////String类的改进函数
+//#include <iostream>
+//using namespace std;
+//#include "twelve.h"
+//int main(){
+//	String s1(" and I am a C++ student.");
+//	String s2 = "Please enter your name: ";
+//	String s3;
+//	cout << s2;
+//	cin >> s3;
+//	s2 = "My name is "+s3;
+//	cout << s2 << ".\n";
+//	s2 = s2 + s1;
+//	s2.stringup();//变大写
+//	cout << "The string\n" << s2 << "\ncontains " << s2.has('A') << "'A'characters in it.\n";
+//	s1 = "red";
+//	String rgb[3] = { String(s1), String(" green"), String("blue") };
+//	cout << "Enter the name of a primary color for mixing light: ";
+//	String ans;
+//	bool succese = false;
+//	while (cin >> ans){
+//		ans.stringlow();//变小写
+//		for (int i = 0; i < 3; i++){
+//			if (ans == rgb[i]){
+//				cout << "That's right!\n";
+//				succese = true;
+//				break;
+//			}
+//		}
+//		if (succese)
+//			break;
+//		else
+//			cout << "Try again!\n";
+//	}
+//	cout << "Bye!\n";
+//	system("pause");
+//	return 0;
+//}
+
+////使用动态存储的堆
+//#include <iostream>
+//#include <cctype>
+//#include "twelve.h"
+//int main(){
+//	using namespace std;
+//	Stack st(3);
+//	unsigned long temp;
+//	char c;
+//
+//	cout << "Plaese enter A to add a PO,\n"
+//		<< "P to process a PO,and Q to quit.\n";
+//	while (cin >> c && (c = toupper(c)) != 'Q'){
+//		while (cin.get() != '\n')
+//			continue;
+//		if (c != 'A'&&c != 'P'){
+//			cout << "Please respond with A,P,orQ:";
+//			continue;
+//		}
+//		switch (c){
+//		case'A':if (st.isfull())
+//			cout << "stack already full\n";
+//				else{
+//					cout << "Eter PO number:";
+//					cin >> temp;
+//					st.push(temp);	
+//				}
+//				break;
+//		case'P':if (st.isempty())
+//			cout << "stack already empty\n";
+//				else{
+//					st.pop(temp);
+//					cout << "Processing PO " << temp << '\n';
+//				}
+//				break;
+//		default:cout << "Whoops!Programming error!\n";
+//		}
+//		cout << "Please enter A to add a customer,\n"
+//			<< "P to process a customer,and Q to quit.\n";
+//	}
+//	cout << "Done!\n";
+//	system("pause");
+//	return 0;
+//}

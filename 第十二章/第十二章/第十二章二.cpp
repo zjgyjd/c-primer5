@@ -194,3 +194,128 @@
 //	processing = std::rand() % 3 + 1;//将随机数控制在1-3之间，即停留时间
 //	arrive = when;//到达时间
 //}
+
+////String类的改进函数
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <iostream>
+//using namespace std;
+//#include "twelve.h"
+//#include <cstring>
+//String::String(){
+//	len = 0;
+//	str= NULL;
+//}
+//String::String(const char* s ){
+//	len = strlen(s);
+//	str = new char[len + 1];
+//	strcpy(str, s);
+//}
+//String::~String(){
+//	delete[]str;
+//}
+//String::String(const String & a){
+//		len = a.len;
+//		str = new char[len + 1];//使其拥有自己的地址，释放不会影响他人
+//		std::strcpy(str, a.str);
+//}
+//void String::stringup(){
+//	for (int i = 0; i < len; i++)
+//		str[i] = toupper(str[i]);
+//}
+//void String::stringlow(){
+//	for (int i = 0; i < len; i++)
+//		str[i] = tolower(str[i]);
+//}
+//int String::has(char a){
+//	int h = 0;
+//	for (int i = 0; i < len; i++){
+//		if (str[i] == a)
+//			h++;
+//	}
+//	return h;
+//}
+//String & String::operator=(const char* s){
+//		delete[]str;
+//		len = std::strlen(s);
+//		str = new char[len + 1];
+//		std::strcpy(str, s);
+//		return *this;
+//	}
+//String & String::operator =(const String & a){
+//	if (this == &a)
+//		return *this;
+//	delete[]str;
+//	len = a.len;
+//	str = new char[len + 1];
+//	strcpy(str, a.str);
+//	return *this;
+//}
+////String String::operator+(const String & a){
+////	String temp;
+////	temp.len = len + a.len;
+////	temp.str = new char[temp.len+1];
+////	temp.str=strcat(str, a.str);
+////	return temp;
+////}
+////String String::operator+(const char* a){
+////	String temp;
+////	temp.len = strlen(a) + len;
+////	temp.str = new char[temp.len+1];
+////	temp.str = strcat(str, a);
+////	return temp;
+////}
+//String operator+(const String & s1,const String & s2){
+//	int chars = s1.len + s2.len;
+//	char *ps = new char[chars + 1];
+//	strcpy(ps, s1.str);
+//	strcat(ps, s2.str);
+//	String temp(ps);
+//	return temp;
+//}
+//bool String::operator==(const String& a){
+//	return (strcmp(str, a.str) == 0);
+//}
+////String operator+(const char* a, String & s){
+//	//return s + a;
+////}
+//ostream & operator<<(std::ostream & os, const String & a){
+//	os << a.str << endl;
+//	return os;
+//}
+//istream & operator>>(std::istream & is, String & a){
+//		char temp[80];
+//		is.getline(temp, 80);
+//		a = temp;
+//		return is;
+//}
+
+////使用动态存储的堆
+//#include "twelve.h"
+//Stack::Stack(int n){
+//	size = n;
+//	pitems = new Item[size];
+//	top = 0;
+//}
+//Stack::~Stack(){ delete[]pitems; }
+//bool Stack::isempty()const{
+//	return top == 0 ? true : false;
+//}
+//bool Stack::isfull()const{
+//	return top == size ? true : false;
+//}
+//bool Stack::push(const Item & item){
+//	if (top < size){
+//		pitems[top++] = item;
+//		return true;
+//	}
+//else
+//	return false;
+//}
+//bool Stack::pop(Item & item){
+//	if (top>0){
+//		item = pitems[--top];
+//		return true;
+//	}
+//else
+//	return false;
+//}
