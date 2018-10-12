@@ -152,23 +152,63 @@
 //	return 0;
 //}
 
-//友元函数的继承以及动态内存分配
-#include <iostream>
-#include "thirteen.h"
-int main(){
-	using std::cout;
-	using std::endl;
-	baseDMA shirt("Portabelly", 8);
-	lacksDMA balloon("red", "Blimpo", 4);
-	hasDMA map("Mercator", "Buffalo Keys", 5);
-	cout << shirt << endl;
-	cout << balloon << endl;
-	cout << map << endl;
-	lacksDMA balloon2(balloon);
-	hasDMA map2;
-	map2 = map;
-	cout << balloon2 << endl;
-	cout << map2 << endl;
-	system("pause");
-	return 0;
-}
+////友元函数的继承以及动态内存分配
+//#include <iostream>
+//#include "thirteen.h"
+//int main(){
+//	using std::cout;
+//	using std::endl;
+//	baseDMA shirt("Portabelly", 8);
+//	lacksDMA balloon("red", "Blimpo", 4);
+//	hasDMA map("Mercator", "Buffalo Keys", 5);
+//	shirt.View();
+//	cout << endl;
+//	balloon.View();
+//	cout << endl;
+//	map.View();
+//	cout  << endl;	
+//	lacksDMA balloon2(balloon);
+//	hasDMA map2;
+//	map2 = map;
+//	balloon2.View();
+//	cout  << endl;
+//	map2.View();
+//	cout  << endl;
+//	system("pause");
+//	return 0;
+//}
+
+////练习
+//#include <iostream>
+//using namespace std;
+//#include "thirteen.h"
+//void Bravo(const Cd & disk);
+//int main(){
+//	Cd c1("Beatles", "Capitol", 14, 35.5);
+//	Classic c2 = Classic("Piano Sonata in B flat,Fantasia in C",
+//		"Alfired Brendel", "Philips", 2, 57.17);
+//	Cd *pcd = &c1;
+//
+//	cout << "Using object directly:\n";//直接使用对象
+//	c1.Report();
+//	c2.Report();
+//
+//	cout << "Using type cd * pointer to objects:\n";//使用类型cd *指向对象的指针
+//	pcd->Report();
+//	pcd = &c2;
+//	pcd->Report();
+//
+//	cout << "Calling a function with a Cd reference argument:\n";//使用Cd引用参数调用函数
+//	Bravo(c1);
+//	Bravo(c2);
+//	cout << "Testing assigment: ";
+//	Classic copy;
+//	copy = c2;
+//	copy.Report();
+//
+//	system("pause");
+//	return 0;
+//}
+//void Bravo(const Cd & disk){
+//	disk.Report();
+//}

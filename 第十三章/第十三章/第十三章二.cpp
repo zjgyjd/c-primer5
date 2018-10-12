@@ -196,75 +196,156 @@
 //	cout.setf(initialState);
 //}
 
-//友元函数的继承以及动态内存分配
-#define _CRT_SECURE_NO_WARNINGS
-#include <cstring>
-#include "thirteen.h"
-baseDMA::baseDMA(const char* l, int r){
-	label = new char[std::strlen(l) + 1];
-	std::strcpy(label, l);
-	rating = r;//评级
-}
-baseDMA::baseDMA(const baseDMA & rs){
-	label = new char[std::strlen(rs.label) + 1];
-	std::strcpy(label, rs.label);
-	rating = rs.rating;
-}
-baseDMA::~baseDMA(){
-	delete[] label;
-}
-baseDMA & baseDMA::operator=(const baseDMA & rs){
-	if (this == &rs)
-		return *this;
-	delete[]label;
-	label = new char[std::strlen(rs.label) + 1];
-	std::strcpy(label, rs.label);
-	rating = rs.rating;
-	return *this;
-}
-std::ostream & operator<<(std::ostream & os, const baseDMA & rs){
-	os << "Label: " << rs.label << std::endl;
-	os << "Rating: " << rs.rating << std::endl;
-	return os;
-}
-lacksDMA::lacksDMA(const char* c, const char* l, int r) :baseDMA(l, r){
-	std::strncpy(color, c, 39);
-	color[39] = '\0';
-}
-lacksDMA::lacksDMA(const char* c, const baseDMA & rs) : baseDMA(rs){
-	std::strncpy(color, c, COL_LEN - 1);
-	color[COL_LEN - 1] = '\0';
-}
-std::ostream & operator<<(std::ostream & os, const lacksDMA & ls){
-	os << (const baseDMA &)ls;//因为不是派生类只能利用强制转换搞定基类
-	os << "Color: " << ls.color << std::endl;
-	return os;
-}
-hasDMA::hasDMA(const char* s, const char* l, int r) :baseDMA(l, r){
-	style = new char[std::strlen(s) + 1];
-	std::strcpy(style, s);
-}
-hasDMA::hasDMA(const char* s, const baseDMA & rs) : baseDMA(rs){
-	style = new char[std::strlen(s) + 1];
-	std::strcpy(style, s);
-}
-hasDMA::hasDMA(const hasDMA & hs) : baseDMA(hs){
-	style = new char(std::strlen(hs.style) + 1);
-	std::strcpy(style, hs.style);
-}
-hasDMA::~hasDMA(){
-	delete[]style;
-}
-hasDMA & hasDMA::operator=(const hasDMA & hs){
-	if (this == &hs)
-		return *this;
-	baseDMA::operator=(hs);
-	style = new char[std::strlen(hs.style) + 1];
-	std::strcpy(style, hs.style);
-	return *this;
-}
-std::ostream & operator<<(std::ostream & os, const hasDMA & hs){
-	os << (const baseDMA &)hs;
-	os << "Style: " << hs.style << std::endl;
-	return os;
-}
+////友元函数的继承以及动态内存分配
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <cstring>
+//#include "thirteen.h"
+//abcDMA::abcDMA(const char* l, int r){
+//	label = new char[std::strlen(l) + 1];
+//	std::strcpy(label, l);
+//	rating = r;//评级
+//}
+//abcDMA::abcDMA(const abcDMA & rs){
+//	label = new char[std::strlen(rs.label) + 1];
+//	std::strcpy(label, rs.label);
+//	rating = rs.rating;
+//}
+//abcDMA::~abcDMA(){
+//	delete[] label;
+//}
+//abcDMA & abcDMA::operator=(const abcDMA & rs){
+//	if (this == &rs)
+//		return *this;
+//	delete[]label;
+//	label = new char[std::strlen(rs.label) + 1];
+//	std::strcpy(label, rs.label);
+//	rating = rs.rating;
+//	return *this;
+//}
+// void abcDMA::View() const{
+//	std::cout << "Label: " << label << std::endl;
+//	std::cout << "Rating: " <<rating << std::endl;
+//}
+// baseDMA:: ~baseDMA(){
+//	
+// }
+// baseDMA & baseDMA::operator=(const baseDMA & rs){
+//	 if (this == &rs)
+//		 return *this;
+//	 abcDMA::operator=(rs);
+//	 return *this;
+// }
+// void baseDMA::View() const{
+//	 abcDMA::View();
+// }
+//lacksDMA::lacksDMA(const char* c, const char* l, int r) :abcDMA(l, r){
+//	std::strncpy(color, c, 39);
+//	color[39] = '\0';
+//}
+//lacksDMA::lacksDMA(const char* c, const abcDMA & rs) : abcDMA(rs){
+//	std::strncpy(color, c, COL_LEN - 1);
+//	color[COL_LEN - 1] = '\0';
+//}
+//void lacksDMA::View() const{
+//	std::cout << "Label: " << Label() << std::endl;
+//	std::cout << "Rating: " << Rating() << std::endl;
+//	std::cout << "Color: " << color << std::endl;
+//}
+//hasDMA::hasDMA(const char* s, const char* l, int r) :abcDMA(l, r){
+//	style = new char[std::strlen(s) + 1];
+//	std::strcpy(style, s);
+//}
+//hasDMA::hasDMA(const char* s, const abcDMA & rs) : abcDMA(rs){
+//	style = new char[std::strlen(s) + 1];
+//	std::strcpy(style, s);
+//}
+//hasDMA::hasDMA(const hasDMA & hs) : abcDMA(hs){
+//	style = new char(std::strlen(hs.style) + 1);
+//	std::strcpy(style, hs.style);
+//}
+//hasDMA::~hasDMA(){
+//	delete[]style;
+//}
+//hasDMA & hasDMA::operator=(const hasDMA & hs){
+//	if (this == &hs)
+//		return *this;
+//	abcDMA::operator=(hs);
+//	style = new char[std::strlen(hs.style) + 1];
+//	std::strcpy(style, hs.style);
+//	return *this;
+//}
+//void hasDMA::View() const{
+//	std::cout << "Label: " << Label() << std::endl;
+//	std::cout << "Rating: " << Rating() << std::endl;
+//	std::cout << "Style: " << style << std::endl;
+//}
+
+////练习
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <cstring>
+//#include <iostream>
+//#include "thirteen.h"
+//using namespace std;
+//Cd::Cd(char * s1, char * s2, int n, double x){
+//	int len = strlen(s1);
+//	performers = new char[len + 1];
+//	strcpy(performers, s1);
+//	label = new char[strlen(s2) + 1];
+//	strcpy(label, s2);
+//	selections = n;
+//	playtime = x;
+//}
+//Cd::Cd(const Cd & d){
+//	performers = new char[strlen(d.performers) + 1];
+//	strcpy(performers, d.performers);
+//	label = new char[strlen(d.label) + 1];
+//	strcpy(label, d.label);
+//	selections = d.selections;
+//	playtime = d.playtime;
+//}
+//Cd::~Cd(){
+//	delete[]label;
+//	delete[]performers;
+//}
+//void Cd::Report()const{
+//	cout << "The performers is " << performers << endl;
+//	cout << "The label is " << label << endl;
+//	cout << "The selections is " << selections << endl;
+//	cout << "The playtime is " << playtime << endl;
+//}
+//Cd & Cd::operator=(const Cd & d){
+//	if (this == &d)
+//		return *this;
+//	delete[]label;
+//	delete[]performers;
+//	performers = new char[strlen(d.performers) + 1];
+//	strcpy(performers, d.performers);
+//	label = new char[strlen(d.label) + 1];
+//	strcpy(label, d.label);
+//	selections = d.selections;
+//	playtime = d.playtime;
+//	return *this;
+//}
+//Classic::Classic(const char * s, char * s1, char * s2, int n, double x):Cd(s1,s2,n,x){
+//	fevorate = new char[strlen(s) + 1];
+//	strcpy(fevorate, s);
+//}
+//Classic::~Classic(){
+//	delete[]fevorate;
+//}
+//Classic::Classic(const Classic & s):Cd(s){
+//	fevorate = new char[strlen(s.fevorate) + 1];
+//	strcpy(fevorate, s.fevorate);
+//}
+//void Classic::Report()const{
+//	Cd::Report();
+//	cout << "The favorate is " << fevorate << endl;
+//}
+//Classic & Classic::operator=(const Classic & d){
+//	if (this == &d)
+//		return *this;
+//	Cd::operator=(d);
+//	fevorate = new char[strlen(d.fevorate) + 1];
+//	strcpy(fevorate, d.fevorate);
+//	return *this;
+//}

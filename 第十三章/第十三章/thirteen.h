@@ -116,41 +116,83 @@
 //
 //#endif
 
-//友元函数的继承以及动态内存分配
-#ifndef THIRTEEN_H_
-#define THIRTEEN_H_
-#include <iostream>
-class baseDMA{
-private:
-	char * label;
-	int rating;
-public:
-	baseDMA(const char * l = "null", int r = 0);
-	baseDMA(const baseDMA & rs);
-	virtual ~baseDMA();
-	baseDMA & operator=(const baseDMA & rs);
-	friend std::ostream & operator<<(std::ostream & os, const baseDMA & rs);
-};
-class lacksDMA :public baseDMA{
-private:
-	enum { COL_LEN = 40 };
-	char color[COL_LEN];
-public:
-	lacksDMA(const char * c = "blank", const char * l = "null",
-		int r = 0);
-	lacksDMA(const char* c, const baseDMA &rs);
-	friend std::ostream & operator<<(std::ostream & os, const lacksDMA & rs);
-};
-class hasDMA :public baseDMA{
-private:
-	char* style;
-public:
-	hasDMA(const char* s = "none", const char* l = "null", int r = 0);
-	hasDMA(const char* s, const baseDMA & rs);
-	hasDMA(const hasDMA & hs);
-	~hasDMA();
-	hasDMA & operator=(const hasDMA & rs);
-	friend std::ostream & operator<<(std::ostream & os, const hasDMA & rs);
-};
+////友元函数的继承以及动态内存分配
+//#ifndef THIRTEEN_H_
+//#define THIRTEEN_H_
+//#include <iostream>
+//class abcDMA{
+//private:
+//	char * label;
+//	int rating;
+//protected:
+//	 char* Label()const{ return label; }
+//	int Rating()const{ return rating; }
+//public:
+//	abcDMA(const char * l = "null", int r = 0);
+//	abcDMA(const abcDMA & rs);
+//	virtual ~abcDMA();
+//	virtual void View() const = 0;
+//	abcDMA & operator=(const abcDMA & rs);
+//};
+//class baseDMA:public abcDMA{
+//public:
+//	baseDMA(const char * l = "null", int r = 0) :abcDMA(l, r){}
+//	baseDMA(const baseDMA & rs) :abcDMA(rs){}
+//	~baseDMA();
+//	baseDMA & operator=(const baseDMA & rs);
+//	virtual void View() const;
+//};
+//class lacksDMA :public abcDMA{
+//private:
+//	enum { COL_LEN = 40 };
+//	char color[COL_LEN];
+//public:
+//	lacksDMA(const char * c = "blank", const char * l = "null",
+//		int r = 0);
+//	lacksDMA(const char* c, const abcDMA &rs);
+//	~lacksDMA(){}
+//	virtual void View() const;
+//};
+//class hasDMA :public abcDMA{
+//private:
+//	char* style;
+//public:
+//	hasDMA(const char* s = "none", const char* l = "null", int r = 0);
+//	hasDMA(const char* s, const abcDMA & rs);
+//	hasDMA(const hasDMA & hs);
+//	~hasDMA();
+//	hasDMA & operator=(const hasDMA & rs);
+//	virtual void View() const;
+//};
+//
+//#endif
 
-#endif
+////练习
+//#ifndef THIRTEEN_H_
+//#define THIRTEEN_H_
+//class Cd{
+//private:
+//	char *performers;//表演者
+//	char *label;//标签
+//	int selections;//选择
+//	double playtime;//时间
+//public:
+//	Cd(char * s1, char * s2, int n, double x);//构造
+//	Cd(const Cd & d);//复制
+//	//Cd();
+//	virtual ~Cd();
+//	virtual void Report()const;
+//	Cd & operator=(const Cd & d);
+//};
+//class Classic :public Cd{
+//private:
+//	char* fevorate;
+//public:
+//	Classic(const char * s = "Null", char * s1 = "Null", char * s2 = "Null", int n = 0, double x = 0);
+//	Classic(const Classic & s);
+//	~Classic();
+//	virtual void Report()const;
+//	Classic &operator=(const Classic & d);
+//};
+//
+//#endif 
