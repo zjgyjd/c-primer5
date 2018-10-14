@@ -212,3 +212,20 @@
 //void Bravo(const Cd & disk){
 //	disk.Report();
 //}
+
+////Á·Ï°2
+//#include <iostream>
+//#include "thirteen.h"
+//using namespace std;
+//int main(){
+//	Port test1;
+//	test1= { "Gallo", "twany", 20 };
+//	test1.Show();
+//	cout << test1;
+//	VintagePort test2;
+//	test2 = { "Gallo", 20, "twany", 18 };
+//	test2.Show();
+//	cout << test2;
+//	system("pause");
+//	return 0;
+//}

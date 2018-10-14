@@ -196,3 +196,37 @@
 //};
 //
 //#endif 
+
+////练习2
+//#include <iostream>
+//using namespace std;
+//class Port{
+//private:
+//	char* brand;//品牌
+//	char style[20];//风格
+//	int bottles;//瓶数
+//public:
+//	Port(const char* br, const char* st , int b );
+//	Port(const Port & p);
+//	Port();
+//	virtual ~Port(){ delete[]brand; }
+//	Port & operator=(const Port & p);
+//	Port & operator+=(int b);//add b to bottles
+//	Port & operator-=(int b);//合法时取出瓶数
+//	int BottleCount()const{ return bottles; }
+//	virtual void Show()const;
+//	friend ostream & operator<<(ostream & os, const Port & p);
+//};
+//class VintagePort :public Port{
+//private:
+//	char* nickname;//昵称
+//	int year;//年分
+//public:
+//	VintagePort();
+//	VintagePort(const char* br, int b, const char* nn, int y);
+//	VintagePort(const VintagePort & vp);
+//	~VintagePort(){ delete[]nickname; }
+//	VintagePort & operator=(const VintagePort & vp);
+//	void Show()const;
+//	friend ostream & operator<<(ostream & os, const VintagePort & vp);
+//};
