@@ -131,16 +131,16 @@ public:
 };
 class Waiter :virtual public Worker{
 private:
-	int panahe;
+	int panache;
 protected:
 	void Data()const;
 	void Get();
 public:
-	Waiter() :Worker(), panahe(0){}
+	Waiter() :Worker(), panache(0){}
 	Waiter(const std::string & s, long n, int p = 0) :
-		Worker(s, n), panahe(p){}
+		Worker(s, n), panache(p){}
 	Waiter(const Worker & wk, int p = 0) :
-		Worker(wk), panahe(p){}
+		Worker(wk), panache(p){}
 	void Set();
 	void Show()const;
 };
